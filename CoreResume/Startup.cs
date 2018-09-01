@@ -47,7 +47,7 @@ namespace CoreResume
             }
 
             app.UseStaticFiles();
-            app.UseCookiePolicy();
+            //app.UseCookiePolicy();
 
             app.UseMvc();
         }
