@@ -6,13 +6,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace CoreWiki.Pages
 {
-    public class ContactModel : PageModel
+    public class FermiParadoxModel : PageModel
     {
         public string Message { get; set; }
 
         public void OnGet()
         {
-            Message = "Your contact page.";
+            Message = "Your Fermi Paradox Wiki page.";
         }
     }
 }
