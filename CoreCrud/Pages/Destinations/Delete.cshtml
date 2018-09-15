@@ -1,0 +1,58 @@
+@page
+@model CoreCrud.Pages.Destinations.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Destination</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Destination.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination.Climate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Destination.Climate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination.Food)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Destination.Food)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination.Cost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Destination.Cost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination.PeakSeasonStart)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Destination.PeakSeasonStart)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination.Country)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Destination.Country.Id)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Destination.Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
