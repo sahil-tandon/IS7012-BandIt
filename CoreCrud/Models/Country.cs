@@ -13,7 +13,8 @@ namespace CoreCrud.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public ICollection<Destination> Destination { get; set; }
-        
+        //public object Position { get; internal set; }
+
         // ADD PROPERTIES HERE
     }
 }

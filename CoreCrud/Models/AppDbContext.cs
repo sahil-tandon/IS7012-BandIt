@@ -10,6 +10,7 @@ namespace CoreCrud.Models
         {
         }
         public DbSet<Destination> Destination { get; set; }
+        //public DbSet<Destination> Destinations { get; set; }
         public DbSet<Country> Country { get; set; }
     }
 }

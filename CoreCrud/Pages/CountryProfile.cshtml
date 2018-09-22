@@ -1,0 +1,32 @@
+﻿@page
+@model CountryProfileModel
+@{
+}
+<h1>
+    Destination Description
+</h1>
+<table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Destination Name</th>
+                <th>Climate</th>
+                <th>Food</th>
+                <th>Cost</th>
+                <th>Peak Season Start</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var code in Model.Destination) {
+            <tr>
+                <td>@code.Id</td>
+                <td>@code.Name</td>
+                <td>@code.Climate</td>
+                <td>@code.Food</td>
+                <td>@code.Cost</td>
+                <td>@code.PeakSeasonStart</td>
+                <td>@code.Country</td>
+            </tr>
+            }
+        </tbody>
+</table>
