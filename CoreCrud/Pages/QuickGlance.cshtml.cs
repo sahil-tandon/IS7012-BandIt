@@ -21,7 +21,7 @@ namespace CoreCrud.Pages
         public IActionResult OnGet()
         {
             Destination = _context.Destination
-            .OrderBy(c=>c.Name).Include(c=>c.Food).ToList();
+            .OrderBy(c=>c.Id).Include(c=>c.Country).ToList();
             return Page();
         }
     }

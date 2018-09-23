@@ -26,7 +26,8 @@ namespace CoreCrud.Pages
             }
 
             Country = _context.Country
-                              .Include(c=>c.Destination).FirstOrDefault(c=>c.Id==id);
+                              .Include(c=>c.Destination)
+                              .FirstOrDefault(c=>c.Id==id);
 
             if(Country == null){
                 return NotFound();

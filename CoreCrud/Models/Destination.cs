@@ -18,6 +18,21 @@ namespace CoreCrud.Models
         public DateTime? PeakSeasonStart { get; set; }
         public int CountryID { get; set; }
         public Country Country { get; set; }
+
+        public string Affordability {
+            get {
+                if(Cost <= 300){
+                    return "Cheap";
+                }
+                if(Cost >300 & Cost <= 600){
+                    return "Reasonable";
+                }
+                if(Cost > 600){
+                    return "Expensive";
+                }
+                return Cost.ToString();
+            }
+        }
         
         // ADD PROPERTIES HERE
     }

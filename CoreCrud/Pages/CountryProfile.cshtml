@@ -5,28 +5,27 @@
 <h1>
     Destination Description
 </h1>
+<br>
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
-            <th>Id</th>
             <th>Destination Name</th>
+            <th>Country</th>
             <th>Climate</th>
             <th>Food</th>
-            <th>Cost</th>
-            <th>Peak Season Start</th>
-            <th>Country</th>
+            <th>Affordability</th>
+            <th>Peak Season Start</th>            
         </tr>
     </thead>
     <tbody>
         @foreach(var code in Model.Country.Destination) {
-        <tr>
-            <td>@code.Id</td>
+        <tr>            
             <td>@code.Name</td>
+            <td>@Model.Country.FetchCountry</td>
             <td>@code.Climate</td>
             <td>@code.Food</td>
-            <td>@code.Cost</td>
+            <td>@code.Affordability</td>
             <td>@code.PeakSeasonStart</td>
-            <td>@Model.Country.Name</td>
         </tr>
         }
     </tbody>
