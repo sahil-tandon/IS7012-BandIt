@@ -4,6 +4,7 @@ using System.Text;
 using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
 
 namespace CoreCrud.Models
 {
@@ -11,6 +12,11 @@ namespace CoreCrud.Models
     {
         [Key]
         public int Id { get; set; }
+        
+        [Required(ErrorMessage = "Please provide a name")]
+        [StringLength(80, MinimumLength=4, ErrorMessage = "4 - 80 characters only")]
+        
+        [CustomValidation(typeof(Country), "checkForDigits")]
         public string Name { get; set; }
         public ICollection<Destination> Destination { get; set; }
 
@@ -37,9 +43,17 @@ namespace CoreCrud.Models
                 return Name;
             }
         }
-        //public object Position { get; internal set; }
 
-        // ADD PROPERTIES HERE
+        //Custom validator to block country name's that contain digits
+        public static ValidationResult checkForDigits(string countryName, ValidationContext context) {
+            if (countryName != null) {            
+                Regex rgx = new Regex(@"^[a-zA-Z]+$");                
+                if(rgx.IsMatch(countryName)){            
+                    return ValidationResult.Success;
+                }
+            }
+            return new ValidationResult("Name can't contain digits");            
+        }
     }
 }
             
