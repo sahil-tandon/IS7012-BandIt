@@ -9,5 +9,7 @@ namespace BandIt.Models
                 : base(options)
         {
         }
+        public DbSet<Band> Band { get; set; }
+        public DbSet<Manager> Manager { get; set; }
     }
 }
