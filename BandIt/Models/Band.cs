@@ -17,6 +17,10 @@ namespace BandIt.Models
         public string Origin { get; set; }
         public string Website { get; set; }
         public string Logo { get; set; }
+
+        [Display(Name = "Date Founded")]
+        [DataType(DataType.Date)]
+        public DateTime? DateFounded{ get; set; }
         public ICollection<Song> Songs { get; set; }
         public ICollection<Concert> Concerts { get; set; }
         public Manager BandManager { get; set; }
