@@ -16,8 +16,7 @@ namespace BandIt.Models
         public int Experience { get; set;}
         public string Nationality { get; set; }
         public ICollection<Band> Bands { get; set; }
-        
-        // ADD PROPERTIES HERE
+                
     }
 }
             

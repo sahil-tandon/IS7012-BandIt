@@ -20,12 +20,10 @@ namespace BandIt.Models
 
         [Display(Name = "Date Founded")]
         [DataType(DataType.Date)]
-        public DateTime? DateFounded{ get; set; }
+        public DateTime? DateFounded { get; set; }
         public ICollection<Song> Songs { get; set; }
         public ICollection<Concert> Concerts { get; set; }
         public Manager BandManager { get; set; }
-
-        // ADD PROPERTIES HERE
     }
 }
             
