@@ -8,8 +8,10 @@ namespace BandIt.Models
         public AppDbContext(DbContextOptions<AppDbContext> options)
                 : base(options)
         {
-        }
-        public DbSet<Band> Band { get; set; }
+        }        
         public DbSet<Manager> Manager { get; set; }
+        public DbSet<Band> Band { get; set; }
+        public DbSet<Concert> Concert { get; set; }
+        public DbSet<Song> Song { get; set; }
     }
 }
