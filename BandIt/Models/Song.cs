@@ -14,7 +14,7 @@ namespace BandIt.Models
         public string Name { get; set; }
         public int Length { get; set; }     //Restrict input to seconds only
         public decimal Rating { get; set; }     //Restrict rating to decimal between 0 to 5
-        public DateTime ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; }
         public Band Artist { get; set; }
     }
 }
