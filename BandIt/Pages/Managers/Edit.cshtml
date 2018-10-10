@@ -1,0 +1,50 @@
+@page
+@model BandIt.Pages.Managers.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Manager</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Manager.Id" />
+            <div class="form-group">
+                <label asp-for="Manager.ManagerName" class="control-label"></label>
+                <input asp-for="Manager.ManagerName" class="form-control" />
+                <span asp-validation-for="Manager.ManagerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Manager.Age" class="control-label"></label>
+                <input asp-for="Manager.Age" class="form-control" />
+                <span asp-validation-for="Manager.Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Manager.Experience" class="control-label"></label>
+                <input asp-for="Manager.Experience" class="form-control" />
+                <span asp-validation-for="Manager.Experience" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Manager.Nationality" class="control-label"></label>
+                <input asp-for="Manager.Nationality" class="form-control" />
+                <span asp-validation-for="Manager.Nationality" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
