@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using BandIt.Models;
+using Microsoft.EntityFrameworkCore;
 namespace BandIt.Pages
 {
     public class BandListingModel : PageModel
@@ -18,7 +19,7 @@ namespace BandIt.Pages
         public ICollection<Band> Bands { get; set; }
         public void OnGet()
         {
-            Bands = _context.Band.OrderBy(x => x.BandName).ToList();
+            Bands = _context.Band.OrderBy(x => x.BandName).Include(x => x.BandManager).ToList();
         }
     }
 }
