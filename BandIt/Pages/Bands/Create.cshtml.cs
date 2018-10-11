@@ -20,6 +20,7 @@ namespace BandIt.Pages.Bands
 
         public IActionResult OnGet()
         {
+        ViewData["ManagerID"] = new SelectList(_context.Manager, "Id", "ManagerName");
             return Page();
         }
 

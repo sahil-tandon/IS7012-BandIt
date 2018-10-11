@@ -29,12 +29,14 @@ namespace BandIt.Pages.Bands
                 return NotFound();
             }
 
-            Band = await _context.Band.FirstOrDefaultAsync(m => m.Id == id);
+            Band = await _context.Band
+                .Include(b => b.BandManager).FirstOrDefaultAsync(m => m.Id == id);
 
             if (Band == null)
             {
                 return NotFound();
             }
+           ViewData["ManagerID"] = new SelectList(_context.Manager, "Id", "ManagerName");
             return Page();
         }
 

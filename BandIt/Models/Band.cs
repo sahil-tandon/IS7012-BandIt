@@ -29,7 +29,6 @@ namespace BandIt.Models
         public string Image { get; set; }
 
         [Display(Name = "Date Founded")]
-        [DataType(DataType.Date)]
         public int DateFounded { get; set; }
         public ICollection<Song> Songs { get; set; }
         public ICollection<Concert> Concerts { get; set; }

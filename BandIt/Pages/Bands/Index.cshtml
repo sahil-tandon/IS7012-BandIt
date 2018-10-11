@@ -29,10 +29,13 @@
                 @Html.DisplayNameFor(model => model.Band[0].Website)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Band[0].Logo)
+                @Html.DisplayNameFor(model => model.Band[0].Image)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Band[0].DateFounded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Band[0].BandManager)
             </th>
             <th></th>
         </tr>
@@ -56,10 +59,13 @@
                 @Html.DisplayFor(modelItem => item.Website)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Logo)
+                @Html.DisplayFor(modelItem => item.Image)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DateFounded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BandManager.ManagerName)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

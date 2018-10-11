@@ -22,7 +22,8 @@ namespace BandIt.Pages.Bands
 
         public async Task OnGetAsync()
         {
-            Band = await _context.Band.ToListAsync();
+            Band = await _context.Band
+                .Include(b => b.BandManager).ToListAsync();
         }
     }
 }

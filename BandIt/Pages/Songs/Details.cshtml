@@ -12,16 +12,16 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Song.Name)
+            @Html.DisplayNameFor(model => model.Song.Title)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Song.Name)
+            @Html.DisplayFor(model => model.Song.Title)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Song.Length)
+            @Html.DisplayNameFor(model => model.Song.Duration)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Song.Length)
+            @Html.DisplayFor(model => model.Song.Duration)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Song.Rating)
@@ -34,6 +34,12 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Song.ReleaseDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Song.Artist)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Song.Artist.BandName)
         </dd>
     </dl>
 </div>

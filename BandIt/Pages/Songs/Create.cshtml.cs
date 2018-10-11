@@ -20,6 +20,7 @@ namespace BandIt.Pages.Songs
 
         public IActionResult OnGet()
         {
+        ViewData["BandID"] = new SelectList(_context.Band, "Id", "BandName");
             return Page();
         }
 

@@ -22,7 +22,8 @@ namespace BandIt.Pages.Concerts
 
         public async Task OnGetAsync()
         {
-            Concert = await _context.Concert.ToListAsync();
+            Concert = await _context.Concert
+                .Include(c => c.PerformingBand).ToListAsync();
         }
     }
 }

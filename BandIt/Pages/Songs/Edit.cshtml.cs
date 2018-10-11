@@ -29,12 +29,14 @@ namespace BandIt.Pages.Songs
                 return NotFound();
             }
 
-            Song = await _context.Song.FirstOrDefaultAsync(m => m.Id == id);
+            Song = await _context.Song
+                .Include(s => s.Artist).FirstOrDefaultAsync(m => m.Id == id);
 
             if (Song == null)
             {
                 return NotFound();
             }
+           ViewData["BandID"] = new SelectList(_context.Band, "Id", "BandName");
             return Page();
         }
 

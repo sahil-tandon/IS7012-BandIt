@@ -22,7 +22,8 @@ namespace BandIt.Pages.Songs
 
         public async Task OnGetAsync()
         {
-            Song = await _context.Song.ToListAsync();
+            Song = await _context.Song
+                .Include(s => s.Artist).ToListAsync();
         }
     }
 }

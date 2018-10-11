@@ -43,16 +43,22 @@
             @Html.DisplayFor(model => model.Band.Website)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Band.Logo)
+            @Html.DisplayNameFor(model => model.Band.Image)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Band.Logo)
+            @Html.DisplayFor(model => model.Band.Image)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Band.DateFounded)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Band.DateFounded)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Band.BandManager)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Band.BandManager.ManagerName)
         </dd>
     </dl>
     

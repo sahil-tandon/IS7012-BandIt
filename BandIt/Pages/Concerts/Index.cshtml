@@ -25,6 +25,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Concert[0].TicketPrice)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Concert[0].PerformingBand)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -42,6 +45,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TicketPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PerformingBand.BandName)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
