@@ -25,6 +25,7 @@ namespace BandIt.Models
         public string Origin { get; set; }
         public string Website { get; set; }
 
+        [Url]
         [Display(Name = "Logo URL")]
         public string Logo { get; set; }
 
