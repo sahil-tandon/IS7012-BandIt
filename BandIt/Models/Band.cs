@@ -28,12 +28,25 @@ namespace BandIt.Models
         [Display(Name = "Image Path")]
         public string Image { get; set; }
 
+        [CustomValidation(typeof(Band), "CheckDateFounded")]
         [Display(Name = "Date Founded")]
         public int DateFounded { get; set; }
         public ICollection<Song> Songs { get; set; }
         public ICollection<Concert> Concerts { get; set; }
+
+        [Display(Name = "Band Manager")]
         public int ManagerID { get; set; }
         public Manager BandManager { get; set; }
+
+        public static ValidationResult CheckDateFounded(int? DateFounded, ValidationContext context) {
+            if (DateFounded == null) {
+                return ValidationResult.Success;
+            }
+            if (DateFounded < 1500 || DateFounded > DateTime.Now.Year) {
+                return new ValidationResult("Invalid Date");
+            }
+            return ValidationResult.Success;
+        }
     }
 }
             

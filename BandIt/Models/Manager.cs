@@ -18,7 +18,14 @@ namespace BandIt.Models
 
         [Range(0, 110, ErrorMessage = "Enter a valid number")]
         public int Age { get; set; }
-        public string Phone { get; set; }    
+
+
+        [Phone]    
+        [StringLength(10, MinimumLength=10, ErrorMessage = "Phone number should be only 10 digits")]
+        public string Phone { get; set; }  
+                
+        [EmailAddress]
+        [Required(ErrorMessage = "Email is required")]  
         public string Email { get; set; }
 
         public string Image { get; set; }
