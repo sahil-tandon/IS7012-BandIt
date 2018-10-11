@@ -3,3 +3,18 @@
 @{
 }
 
+<h1>Our Current Band Line-up</h1>
+
+@foreach(var code in Model.Bands) {
+    <div class="band-tile">
+        <img src="images/bands/metallica.jpg" class="band-image">
+        <div class="band-info">                        
+            <p class="band-genre"><span class="band-label">Genre: </span>@code.Genre</p>
+            <p class="band-origin"><span class="band-label">Origin: </span>@code.Origin</p>            
+            <p class="band-founded"><span class="band-label">Founded: </span>@code.DateFounded</p>
+            <p class="band-manager"><span class="band-manager">Manager: </span>Pending</p>
+            <p class="band-members"><span class="band-label">Members: </span>@code.Members</p>
+            <p class="band-site"><span class="band-label">Website: </span><a href="http://www.@code.Website" target="_blank">@code.Website</a></p>
+        </div>
+    </div>
+}

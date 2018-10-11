@@ -3,6 +3,7 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background: #fafafa;
 }
 
 /* Wrapping element */
@@ -34,4 +35,39 @@ body {
     .carousel-caption {
         display: none;
     }
+}
+
+/* Band Listing Page */
+.band-tile {
+    width: calc((100% - 120px)/3);
+    float: left;
+    margin: 10px 30px;
+    border: 1px solid black;
+    background: #000;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.band-tile:nth-of-type(3n) {
+    margin-right: 0;
+}
+.band-tile:nth-of-type(3n+1) {
+    margin-left: 0;
+}
+.band-image {
+    width: calc(100% - 30px);
+    border: 1px solid white;
+    margin: 15px 15px 0 15px;
+    box-sizing: border-box;
+}
+.band-label {
+    font-weight: bold;
+}
+.band-info {
+    padding: 15px;
+}
+.band-info p {
+    margin: 0;
+    padding: 2px 0;
+    text-align: center;
+    color: white;
 }
