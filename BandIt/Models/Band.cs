@@ -11,11 +11,21 @@ namespace BandIt.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "Name cannot be blank")]
+        [Display(Name = "Band Name")]
         public string BandName { get; set; }
+
+        [Required(ErrorMessage = "Members field cannot be blank")]
+        [Display(Name = "Band Members")]
         public string Members { get; set; }
+
+        [Required(ErrorMessage = "Genre cannot be blank")]
         public string Genre { get; set; }
         public string Origin { get; set; }
         public string Website { get; set; }
+
+        [Display(Name = "Logo URL")]
         public string Logo { get; set; }
 
         [Display(Name = "Date Founded")]
