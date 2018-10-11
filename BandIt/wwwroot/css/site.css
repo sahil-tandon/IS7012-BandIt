@@ -38,6 +38,9 @@ body {
 }
 
 /* Band Listing Page */
+.band-tile-wrap {
+    overflow: hidden;
+}
 .band-tile {
     width: calc((100% - 120px)/3);
     float: left;
