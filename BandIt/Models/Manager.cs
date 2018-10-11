@@ -18,6 +18,10 @@ namespace BandIt.Models
 
         [Range(0, 110, ErrorMessage = "Enter a valid number")]
         public int Age { get; set; }
+        public string Phone { get; set; }    
+        public string Email { get; set; }
+
+        public string Image { get; set; }
 
         [CustomValidation(typeof(Manager), "CheckExperience")]
         public int Experience { get; set;}

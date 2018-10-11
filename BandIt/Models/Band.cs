@@ -26,13 +26,14 @@ namespace BandIt.Models
         public string Website { get; set; }
         
         [Display(Name = "Image Path")]
-        public string Logo { get; set; }
+        public string Image { get; set; }
 
         [Display(Name = "Date Founded")]
         [DataType(DataType.Date)]
-        public DateTime? DateFounded { get; set; }
+        public int DateFounded { get; set; }
         public ICollection<Song> Songs { get; set; }
         public ICollection<Concert> Concerts { get; set; }
+        public int ManagerID { get; set; }
         public Manager BandManager { get; set; }
     }
 }

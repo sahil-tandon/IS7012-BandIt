@@ -29,6 +29,7 @@ namespace BandIt.Models
 
         [Display(Name = "Performing Band")]
         [Required(ErrorMessage = "Please select a Performing Band.")]
+        public int BandID { get; set; }
         public Band PerformingBand { get; set; }
     }
 }
