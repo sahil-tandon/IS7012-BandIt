@@ -49,6 +49,10 @@ body {
     background: #000;
     border-radius: 12px;
     cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+.band-tile:hover {
+    background: #101010;
 }
 .band-tile:nth-of-type(3n) {
     margin-right: 0;
@@ -58,12 +62,13 @@ body {
 }
 .band-image {
     width: calc(100% - 30px);
-    border: 1px solid white;
+    border: 2px solid #96281b;
     margin: 15px 15px 0 15px;
     box-sizing: border-box;
+    border-radius: 10px;
 }
 .band-label {
-    font-weight: bold;
+    color: #96281b;
 }
 .band-info {
     padding: 15px;
@@ -72,5 +77,6 @@ body {
     margin: 0;
     padding: 2px 0;
     text-align: center;
-    color: white;
+    color: #ccc;
+    font-weight: bold;
 }
