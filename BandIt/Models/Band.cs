@@ -24,9 +24,8 @@ namespace BandIt.Models
         public string Genre { get; set; }
         public string Origin { get; set; }
         public string Website { get; set; }
-
-        [Url]
-        [Display(Name = "Logo URL")]
+        
+        [Display(Name = "Image Path")]
         public string Logo { get; set; }
 
         [Display(Name = "Date Founded")]
