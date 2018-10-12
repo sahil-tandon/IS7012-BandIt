@@ -1,0 +1,74 @@
+﻿@page
+@model AdminModel
+@{
+}
+
+<p>
+    <a asp-page="Bands/Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Band Name
+            </th>
+            <th>
+                Members
+            </th>
+            <th>
+                Genre
+            </th>
+            <th>
+                Origin
+            </th>
+            <th>
+                Website
+            </th>
+            <th>
+                Image
+            </th>
+            <th>
+                Date Founded
+            </th>
+            <th>
+                Band Manager
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Bands) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BandName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Members)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Origin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Website)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateFounded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BandManager.ManagerName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
