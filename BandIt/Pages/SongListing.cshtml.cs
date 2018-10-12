@@ -41,26 +41,26 @@ namespace BandIt.Pages
         public bool SearchCompleted { get; set; }
         public ICollection<Song> SortResults { get; set; }
         
-        public void OnPost() {
+        public void OnPost(int? id) {
             // PERFORM SEARCH
-            if(SortValue == null){
-                SortResults =  _context.Song.OrderBy(x => x.Title).Include(x => x.Artist).ToList();
+            if(SortValue == "Default"){
+                SortResults =  _context.Song.OrderBy(x => x.Title).Where(x => x.Artist.Id == id).Include(x => x.Artist).ToList();
                 SearchCompleted = true;
             }
             if(SortValue == "Title"){
-                SortResults =  _context.Song.OrderBy(x => x.Title).Include(x => x.Artist).ToList();
+                SortResults =  _context.Song.OrderBy(x => x.Title).Where(x => x.Artist.Id == id).Include(x => x.Artist).ToList();
                 SearchCompleted = true;
             }
             if(SortValue == "Duration"){
-                SortResults =  _context.Song.OrderBy(x => x.Duration).Include(x => x.Artist).ToList();
+                SortResults =  _context.Song.OrderBy(x => x.Duration).Where(x => x.Artist.Id == id).Include(x => x.Artist).ToList();
                 SearchCompleted = true;
             }
             if(SortValue == "Rating"){
-                SortResults =  _context.Song.OrderBy(x => x.Rating).Include(x => x.Artist).ToList();
+                SortResults =  _context.Song.OrderBy(x => x.Rating).Where(x => x.Artist.Id == id).Include(x => x.Artist).ToList();
                 SearchCompleted = true;
             }
             if(SortValue == "Release Date"){
-                SortResults =  _context.Song.OrderBy(x => x.ReleaseDate).Include(x => x.Artist).ToList();
+                SortResults =  _context.Song.OrderBy(x => x.ReleaseDate).Where(x => x.Artist.Id == id).Include(x => x.Artist).ToList();
                 SearchCompleted = true;
             }    
         }
