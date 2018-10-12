@@ -5,49 +5,51 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<div class="container">
+    <h2>Edit</h2>
 
-<h4>Song</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Song.Id" />
-            <div class="form-group">
-                <label asp-for="Song.Title" class="control-label"></label>
-                <input asp-for="Song.Title" class="form-control" />
-                <span asp-validation-for="Song.Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Song.Duration" class="control-label"></label>
-                <input asp-for="Song.Duration" class="form-control" />
-                <span asp-validation-for="Song.Duration" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Song.Rating" class="control-label"></label>
-                <input asp-for="Song.Rating" class="form-control" />
-                <span asp-validation-for="Song.Rating" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Song.ReleaseDate" class="control-label"></label>
-                <input asp-for="Song.ReleaseDate" class="form-control" />
-                <span asp-validation-for="Song.ReleaseDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Song.BandID" class="control-label"></label>
-                <select asp-for="Song.BandID" class="form-control" asp-items="ViewBag.BandID"></select>
-                <span asp-validation-for="Song.BandID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </form>
+    <h4>Song</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Song.Id" />
+                <div class="form-group">
+                    <label asp-for="Song.Title" class="control-label"></label>
+                    <input asp-for="Song.Title" class="form-control" />
+                    <span asp-validation-for="Song.Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Song.Duration" class="control-label"></label>
+                    <input asp-for="Song.Duration" class="form-control" />
+                    <span asp-validation-for="Song.Duration" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Song.Rating" class="control-label"></label>
+                    <input asp-for="Song.Rating" class="form-control" />
+                    <span asp-validation-for="Song.Rating" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Song.ReleaseDate" class="control-label"></label>
+                    <input asp-for="Song.ReleaseDate" class="form-control" />
+                    <span asp-validation-for="Song.ReleaseDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Song.BandID" class="control-label"></label>
+                    <select asp-for="Song.BandID" class="form-control" asp-items="ViewBag.BandID"></select>
+                    <span asp-validation-for="Song.BandID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-page="./Index">Back to List</a>
+    <div>
+        <a asp-page="./Index">Back to List</a>
+    </div>
 </div>
 
 @section Scripts {
