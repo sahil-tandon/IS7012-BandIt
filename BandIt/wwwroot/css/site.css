@@ -65,7 +65,8 @@ body {
     border: 2px solid #96281b;
     margin: 15px 15px 0 15px;
     box-sizing: border-box;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .band-label {
     color: #96281b;
