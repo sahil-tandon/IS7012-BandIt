@@ -1,0 +1,30 @@
+﻿@page
+@model SongListingModel
+@{
+}
+
+<h1>
+    SONG LISTING
+</h1>
+<table class="table table-bordered table-striped">
+   <thead>
+      <tr>
+         <th>Title</th>
+         <th>Duration</th>
+         <th>Rating</th>
+         <th>Release Date</th>
+         <th>Artist Name</th>
+      </tr>
+   </thead>
+   <tbody>
+      @foreach(var code in Model.Songs) {
+      <tr>
+         <td>@code.Title</td>
+         <td>@code.Duration</td>
+         <td>@code.Rating</td>
+         <td>@code.ReleaseDate</td>
+         <td>@code.Artist.BandName</td>
+      </tr>
+      }
+   </tbody>
+</table>
