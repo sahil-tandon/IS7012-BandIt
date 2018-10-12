@@ -5,45 +5,47 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<div class="container">
+    <h2>Details</h2>
 
-<div>
-    <h4>Concert</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Concert.ConcertName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Concert.ConcertName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Concert.Venue)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Concert.Venue)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Concert.Date)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Concert.Date)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Concert.TicketPrice)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Concert.TicketPrice)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Concert.PerformingBand)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Concert.PerformingBand.BandName)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Concert.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <div>
+        <h4>Concert</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Concert.ConcertName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Concert.ConcertName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Concert.Venue)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Concert.Venue)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Concert.Date)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Concert.Date)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Concert.TicketPrice)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Concert.TicketPrice)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Concert.PerformingBand)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Concert.PerformingBand.BandName)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.Concert.Id">Edit</a> |
+        <a asp-page="./Index">Back to List</a>
+    </div>
 </div>
