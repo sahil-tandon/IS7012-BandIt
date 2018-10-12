@@ -17,27 +17,20 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="header">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-page="/Index" class="navbar-brand">BandIt</a>
+            <div class="header-left">
+                <a asp-page="/Index">Home</a>
+                <a asp-page="/BandListing">Bands</a>
+                <a asp-page="/ManagerListing">Managers</a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-page="/Index">Home</a></li>
-                    <li><a asp-page="/About">About</a></li>
-                    <li><a asp-page="/Contact">Contact</a></li>
-                    <li><a asp-page="/BandListing">Band Listing</a></li>
-                    <li><a asp-page="/ManagerListing">Manager Listing</a></li>
-                </ul>
+            <div class="header-logo">
+                <a asp-page="/Index"><img src="images/bandit-logo.png"></a>
+            </div>
+            <div class="header-right">
+                <a asp-page="/Concerts">Concerts</a>
+                <a asp-page="/About">About</a>
+                <a asp-page="/Contact">Contact</a>
             </div>
         </div>
     </nav>

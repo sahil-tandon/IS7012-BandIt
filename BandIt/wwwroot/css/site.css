@@ -1,9 +1,13 @@
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
+    padding-top: 90px;
     padding-bottom: 20px;
     background: #fafafa;
+    transition: padding-top 0.4s ease-in-out;
+}
+body.collapsed {
+    padding-top: 50px;
 }
 
 /* Wrapping element */
@@ -12,7 +16,6 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
-
 /* Carousel */
 .carousel-caption p {
     font-size: 20px;
@@ -35,6 +38,68 @@ body {
     .carousel-caption {
         display: none;
     }
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    background: #000;
+    z-index: 999;
+    text-align: center;
+    transition: height 0.4s ease-in-out;
+}
+.header-left {
+    float: left;
+    margin: 35px 0;
+    transition: margin 0.4s ease-in-out;
+}
+.header-right {    
+    float: right;
+    margin: 35px 0;
+    transition: margin 0.4s ease-in-out;
+}
+.header a {    
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    padding: 0 15px;
+    transition: color 0.4s ease-in-out;
+}
+.header a:hover {
+    color: #1499D7;
+}
+.header-right a:hover {
+    color: #f22613;
+}
+.header-logo,
+.header-logo a {
+    display: inline-block;
+}
+.header-logo img {
+    width: 120px;
+    margin: 11.5px 0;
+    object-fit: cover;
+    object-position: bottom;
+    height: 67px;
+    transition: height 0.4s ease-in-out;
+}
+.header.collapsed {
+    height: 50px;
+}
+.header.collapsed .header-left,
+.header.collapsed .header-right {
+    margin: 15px 0;
+}
+.header.collapsed .header-logo img {
+    height: 17px;
+    margin: 16.5px 0;
 }
 
 /* Band Listing Page */
