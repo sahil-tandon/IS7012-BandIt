@@ -1,0 +1,39 @@
+﻿@page
+@model ManagerListingModel
+@{
+}
+
+<h1>OUR TEAM</h1>
+
+<form action="" method="POST" style="margin-top: 50px;">
+  <div class="form-group">
+    <label class="control-label" for="search">Manager Name</label>
+    <input type="text" class="form-control" name="search" id="search" />
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Search Manager" class="btn btn-default" />
+  </div>
+</form>
+    @if(!Model.SearchCompleted){
+        Model.SearchResults = Model.Managers;
+    }
+    <div class="band-tile-wrap">
+    @if(Model.SearchResults.Count > 0){
+        @foreach(var code in Model.SearchResults) {
+            <div class="band-tile">
+                <img src="images/managers/allenklein.jpg" class="band-image">
+                <div class="band-info">  
+                    <p class="band-name"><span class="band-label">Name: </span>@code.ManagerName</p>                      
+                    <p class="band-genre"><span class="band-label">Age: </span>@code.Age</p>
+                    <p class="band-origin"><span class="band-label">Phone: </span>@code.Phone</p>            
+                    <p class="band-founded"><span class="band-label">Email: </span>@code.Email</p>
+                    <p class="band-manager"><span class="band-label">Experience: </span>@code.Experience</p>
+                    <p class="band-members"><span class="band-label">Nationality: </span>@code.Nationality</p>
+                </div>
+            </div>
+        }
+    }
+    else{
+        <div>No result for the search item.</div>   
+    }
+    </div>
