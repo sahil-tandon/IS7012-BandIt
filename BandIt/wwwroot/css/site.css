@@ -9,12 +9,18 @@ body {
 body.collapsed {
     padding-top: 50px;
 }
+.clear-fix:after {
+    display: table;
+    content: '';
+    clear: both;
+}
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    font-size: 12px;
+    font-family: Tahoma, Geneva, sans-serif;
+    letter-spacing: 0.05em;
 }
 /* Carousel */
 .carousel-caption p {
@@ -72,11 +78,17 @@ body.collapsed {
     padding: 0 15px;
     transition: color 0.4s ease-in-out;
 }
-.header a:hover {
+.header-left a:hover {
     color: #1499D7;
 }
 .header-right a:hover {
     color: #f22613;
+}
+.header-left a:first-of-type {
+    padding-left: 0;
+}
+.header-right a:last-of-type {
+    padding-right: 0;
 }
 .header-logo,
 .header-logo a {
@@ -100,6 +112,89 @@ body.collapsed {
 .header.collapsed .header-logo img {
     height: 17px;
     margin: 16.5px 0;
+}
+
+/* Home Page */
+.our-bands {
+    padding: 50px 0;
+    text-align: center;
+}
+.our-bands-copy {
+    font-size: 24px;
+    font-style: italic;
+    color: #555;
+}
+.our-bands-list {
+    padding-top: 40px;
+}
+.our-band,
+.see-all {
+    width: calc(100%/5);
+    float: left;
+    text-align: center;
+}
+.our-band img {
+    width: 100%;
+    padding: 15px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.our-band-name {
+    font-size: 18px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+.see-all a {
+    display: inline-block;    
+    background: #1499D7;
+    border-radius: 50%;
+    transition: background 0.4s ease-in-out;
+    width: 203px;
+    height: 203px;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 203px;
+    margin: 15px;
+}
+.see-all a:hover {    
+    background: #f22613;
+    text-decoration: none;
+}
+.about-us {
+    padding: 50px 0;
+    text-align: center;
+}
+.about-head {
+    font-size: 24px;
+    font-weight: bold;
+}
+.about-copy {
+    font-size: 18px;
+    color: #555;
+    padding: 10px 0;    
+}
+.about-detail {
+    padding-top: 20px;
+}
+.about-item {
+    width: 25%;
+    padding: 25px;
+    float: left;
+}
+.about-icon {
+    width: 70px;
+}
+.about-title {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 25px;
+}
+.about-description {
+    font-size: 14px;
+    color: #555;
+    text-align: justify;
+    padding-top: 10px;
 }
 
 /* Band Listing Page */
