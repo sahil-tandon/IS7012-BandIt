@@ -10,12 +10,10 @@ namespace BandIt.Pages
 {
     public class BandListingModel : PageModel
     {        
-        private AppDbContext _context;
-        
+        private AppDbContext _context;        
         public BandListingModel(AppDbContext context) {
             _context = context;
         }
-
         public ICollection<Band> Bands { get; set; }
         public void OnGet()
         {
