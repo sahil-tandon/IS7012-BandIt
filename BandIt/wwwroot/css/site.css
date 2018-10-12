@@ -241,3 +241,21 @@ body.collapsed {
     color: #ccc;
     font-weight: bold;
 }
+
+/* Search */
+.search-form {
+    margin-top: 50px;
+}
+.search-bar {
+    width: calc(100% - 145px);
+    float: left;
+}
+.search-btn {
+    width: 125px;
+    float: right;
+    margin: 22px 0;
+    text-align: right;
+}
+.search-btn .btn {
+    width: 125px;
+}
