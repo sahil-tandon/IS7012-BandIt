@@ -20,6 +20,7 @@ namespace BandIt.Pages
 
         public IActionResult OnGet(int? id)
         {
+            SearchCompleted = false;
             if(id==null){
                 Songs = _context.Song
                     .OrderBy(x=>x.Title).Include(x => x.Artist).ToList();
@@ -34,6 +35,34 @@ namespace BandIt.Pages
             }
 
             return Page();
+        }
+        [BindProperty]
+        public string SortValue { get; set; }
+        public bool SearchCompleted { get; set; }
+        public ICollection<Song> SortResults { get; set; }
+        
+        public void OnPost() {
+            // PERFORM SEARCH
+            if(SortValue == null){
+                SortResults =  _context.Song.OrderBy(x => x.Title).Include(x => x.Artist).ToList();
+                SearchCompleted = true;
+            }
+            if(SortValue == "Title"){
+                SortResults =  _context.Song.OrderBy(x => x.Title).Include(x => x.Artist).ToList();
+                SearchCompleted = true;
+            }
+            if(SortValue == "Duration"){
+                SortResults =  _context.Song.OrderBy(x => x.Duration).Include(x => x.Artist).ToList();
+                SearchCompleted = true;
+            }
+            if(SortValue == "Rating"){
+                SortResults =  _context.Song.OrderBy(x => x.Rating).Include(x => x.Artist).ToList();
+                SearchCompleted = true;
+            }
+            if(SortValue == "Release Date"){
+                SortResults =  _context.Song.OrderBy(x => x.ReleaseDate).Include(x => x.Artist).ToList();
+                SearchCompleted = true;
+            }    
         }
     }
 }

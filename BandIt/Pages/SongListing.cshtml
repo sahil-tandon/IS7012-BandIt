@@ -6,25 +6,38 @@
 <h1>
     SONG LISTING
 </h1>
-<table class="table table-bordered table-striped">
-   <thead>
-      <tr>
-         <th>Title</th>
-         <th>Duration</th>
-         <th>Rating</th>
-         <th>Release Date</th>
-         <th>Artist Name</th>
-      </tr>
-   </thead>
-   <tbody>
-      @foreach(var code in Model.Songs) {
-      <tr>
-         <td>@code.Title</td>
-         <td>@code.Duration</td>
-         <td>@code.Rating</td>
-         <td>@code.ReleaseDate</td>
-         <td>@code.Artist.BandName</td>
-      </tr>
-      }
-   </tbody>
-</table>
+<form action="" method="POST" style="margin-top: 50px;" id="sort-form">
+    <select name="SortValue" form="sort-form" class = "form-control" id="sort-by">
+    <option value="Default">Sort by</option>
+    <option value="Title">Title</option>
+    <option value="Duration">Duration</option>
+    <option value="Rating">Rating</option>
+    <option value="Release Date">Release Date</option>
+    </select>
+    <input type = "submit" value="Sort" class="btn btn-default">
+</form>
+ @if(!Model.SearchCompleted){
+        Model.SortResults = Model.Songs;
+ }
+    <table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Duration</th>
+            <th>Rating</th>
+            <th>Release Date</th>
+            <th>Artist Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var code in Model.SortResults) {
+        <tr>
+            <td>@code.Title</td>
+            <td>@code.Duration</td>
+            <td>@code.Rating</td>
+            <td>@code.ReleaseDate</td>
+            <td>@code.Artist.BandName</td>
+        </tr>
+        }
+    </tbody>
+    </table>
