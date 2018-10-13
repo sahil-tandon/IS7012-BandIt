@@ -1,7 +1,6 @@
 /* Global */
 body {
     padding-top: 90px;
-    background: 
     transition: padding-top 0.4s ease-in-out;
     background: linear-gradient(to right, #8e9eab, #eef2f3);    
 }
@@ -24,6 +23,12 @@ body.collapsed {
     text-align: center;
     margin-top: 40px;
     letter-spacing: 0.05em;
+}
+.carousel-inner > .item > img {
+    height: 600px;
+    object-fit: cover;
+    width: 100%;
+    object-position: top;
 }
 hr {
     margin: 40px 0;
