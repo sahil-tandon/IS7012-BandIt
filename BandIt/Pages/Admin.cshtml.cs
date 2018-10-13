@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using BandIt.Models;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace BandIt.Pages
 {
@@ -29,8 +30,11 @@ namespace BandIt.Pages
         }
         
         [BindProperty]
+        [CustomValidation(typeof(AdminModel), "CheckBandUpdateValue")]
         public string BandUpdate { get; set; }
+
         [BindProperty]
+        [CustomValidation(typeof(AdminModel), "CheckManagerUpdateValue")]
         public string ManagerUpdate { get; set; }
         public bool SearchCompleted { get; set; }
         public void OnPost() {
@@ -56,6 +60,38 @@ namespace BandIt.Pages
                 SearchCompleted = true;
 
             }
+        }
+        public static ValidationResult CheckBandUpdateValue(string BandUpdate, ValidationContext context) {
+            bool presence = false;
+            var dbContext = context.GetService(typeof(AppDbContext)) as AppDbContext;
+            ICollection<Band> Bands = dbContext.Band.OrderBy(x => x.BandName).Include(x => x.BandManager).ToList();
+            foreach(var code in Bands){
+                if (@code.BandName.Contains(BandUpdate)) {
+                 presence = true;
+                }
+                else
+                    presence = false;
+            }
+            if(presence == false)
+                return new ValidationResult("Invalid Input");
+            else
+                return ValidationResult.Success;
+        }
+        public static ValidationResult CheckManagerUpdateValue(string ManagerUpdate, ValidationContext context) {
+            bool presence = false;
+            var dbContext = context.GetService(typeof(AppDbContext)) as AppDbContext;
+            ICollection<Manager> Managers = dbContext.Manager.OrderBy(x => x.ManagerName).ToList();
+            foreach(var code in Managers){
+                if (@code.ManagerName.Contains(ManagerUpdate)) {
+                 presence = true;
+                }
+                else
+                    presence = false;
+            }
+            if(presence == false)
+                return new ValidationResult("Invalid Input");
+            else
+                return ValidationResult.Success;
         }
     }
 }

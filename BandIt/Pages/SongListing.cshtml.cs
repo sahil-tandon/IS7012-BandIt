@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using BandIt.Models;
@@ -37,6 +38,7 @@ namespace BandIt.Pages
             return Page();
         }
         [BindProperty]
+        [CustomValidation(typeof(SongListingModel), "CheckSortValue")]
         public string SortValue { get; set; }
         public bool SearchCompleted { get; set; }
         public ICollection<Song> SortResults { get; set; }
@@ -73,6 +75,13 @@ namespace BandIt.Pages
                     SearchCompleted = true;
                 }
             }    
+        }
+        public static ValidationResult CheckSortValue(string SortValue, ValidationContext context) {
+            if (SortValue == "Default" || SortValue == "Title" || SortValue == "Duration" || SortValue == "Rating" || SortValue == "Release Date" || SortValue == "Artist") {
+                return ValidationResult.Success;
+            }
+            else
+                return new ValidationResult("Invalid Input");
         }
     }
 }

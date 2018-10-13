@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using BandIt.Models;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+
 namespace BandIt.Pages
 {
     public class BandListingModel : PageModel
@@ -24,6 +26,7 @@ namespace BandIt.Pages
 
 
         [BindProperty]
+        [StringLength(30, ErrorMessage = "Invalid Input")]
         public string Search { get; set; }
         public bool SearchCompleted { get; set; }
         public ICollection<Band> SearchResults { get; set; }

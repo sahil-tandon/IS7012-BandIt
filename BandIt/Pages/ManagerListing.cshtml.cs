@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using BandIt.Models;
@@ -25,6 +26,7 @@ namespace BandIt.Pages
             Managers = _context.Manager.OrderBy(x => x.ManagerName).ToList();
         }
         [BindProperty]
+        [StringLength(30, ErrorMessage = "Invalid Input")]
         public string Search { get; set; }
         public bool SearchCompleted { get; set; }
         public ICollection<Manager> SearchResults { get; set; }
