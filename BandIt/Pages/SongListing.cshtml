@@ -35,7 +35,7 @@
 
     @foreach(var code in Model.SortResults) {
         <tr>
-            <td>@code.Title</td>
+            <td><a target = "_blank" href = "https://www.youtube.com/results?search_query=@code.Title">@code.Title</a></td>
             <td>@code.Duration</td>
             <td>@code.Rating</td>
             <td>@code.ReleaseDate</td>
