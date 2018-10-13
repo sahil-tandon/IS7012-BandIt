@@ -30,7 +30,7 @@ namespace BandIt.Pages
             Songs = _context.Song
                     .OrderBy(x=>x.Title).Where(x => x.Artist.Id == id).Include(x => x.Artist).ToList();
             }
-
+            
             if(Songs==null){
                 return NotFound();
             }

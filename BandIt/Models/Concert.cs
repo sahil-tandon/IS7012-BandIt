@@ -19,7 +19,6 @@ namespace BandIt.Models
         [Required(ErrorMessage = "Please provide a Concert Venue.")]
         public string Venue { get; set; }
 
-        [CustomValidation(typeof(Concert), "CheckConcertDate")]
         [DataType(DataType.Date)]
         [Required(ErrorMessage = "Please provide a Concert Date.")]
         public DateTime? Date { get; set; }
@@ -33,15 +32,6 @@ namespace BandIt.Models
         public int BandID { get; set; }
         public Band PerformingBand { get; set; }
 
-        public static ValidationResult CheckConcertDate(DateTime? Date, ValidationContext context) {
-            if (Date == null) {
-                return ValidationResult.Success;
-            }
-            if (Date > DateTime.Today) {
-                return new ValidationResult("Invalid Date");
-            }
-            return ValidationResult.Success;
-        }
     }
 }
             
