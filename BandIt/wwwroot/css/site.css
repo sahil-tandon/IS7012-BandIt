@@ -103,6 +103,9 @@ footer p {
 .header-logo,
 .header-logo a {
     display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .header-logo img {
     width: 120px;
