@@ -273,7 +273,6 @@ footer p {
 /* Manager Listing */
 .contact-card {
     width: calc(50% - 20px);
-    border: 1px solid black;
     box-sizing: border-box;
     margin-bottom: 20px;
     background: #000;
@@ -292,6 +291,9 @@ footer p {
 .contact-image {
     width: 40%;
     float: left;
+    height: 219.2px;
+    object-fit: cover;
+    object-position: top;
 }
 .contact-info {
     width: 60%;
