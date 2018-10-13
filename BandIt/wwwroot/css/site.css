@@ -248,6 +248,24 @@ footer p {
     color: #ccc;
     font-weight: bold;
 }
+.band-info .band-name {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #f7ca18;
+}
+.band-songs a {
+    color: #ccc;
+    border-bottom: 1px solid #ccc;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 0 0px 0;
+}
+.band-songs a:hover,
+.band-songs a:focus,
+.band-songs a:visited {
+    color: #ccc;
+    text-decoration: none;
+}
 
 /* Manager Listing */
 .contact-card {
@@ -398,6 +416,12 @@ footer p {
 }
 
 /* Song Listing */
+.song-listing table {
+    text-transform: capitalize;
+}
+.song-listing table tr {    
+    transition: all 0.2s ease-in-out;
+}
 .song-listing table th {
     border-width: 3px!important;
 }
