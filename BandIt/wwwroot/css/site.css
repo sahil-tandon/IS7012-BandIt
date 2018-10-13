@@ -389,10 +389,13 @@ footer p {
 }
 
 /* Song Listing */
-.song-listing table {
-    color: white;
+.song-listing table th {
+    border-width: 3px!important;
 }
-.song-listing table tbody tr:hover,
+.song-listing table th,
+.song-listing table td {
+    border-color: #000!important;
+}
 .song-listing table tbody tr:hover a {
     color: black;
 }
@@ -400,7 +403,7 @@ footer p {
     font-size: 15px;
 }
 .song-listing a {
-    color: #fff;
+    color: #000;
     text-decoration: underline;
 }
 .song-listing a:hover,
