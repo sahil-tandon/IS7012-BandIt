@@ -4,39 +4,41 @@
     ViewData["Title"] = "Manager Listing";
 }
 
-<div class="container">
-    <h1 class="custom-head">MEET OUR CONNOISSEURS..</h1>
+<div class="manager-listing">
+    <div class="container">
+        <h1 class="custom-head">MEET OUR CONNOISSEURS..</h1>
 
-    <form action="" method="POST" class="search-form clear-fix">
-        <div class="form-group search-bar">
-            <label class="control-label" for="search">Manager Name</label>
-            <input type="text" class="form-control" name="search" id="search" />
-        </div>
-        <div class="form-group search-btn">
-            <input type="submit" value="Search Manager" class="btn btn-default" />
-        </div>
-    </form>
-    @if(!Model.SearchCompleted){
-        Model.SearchResults = Model.Managers;
-    }
-    <div class="contact-cards">
-    @if(Model.SearchResults.Count > 0){
-        @foreach(var code in Model.SearchResults) {
-            <div class="contact-card">
-                <img src="images/managers/allenklein.jpg" class="contact-image">
-                <div class="contact-info">  
-                    <p class="contact-name">@code.ManagerName</p>                      
-                    <p class="contact-age"><span class="contact-label">Age: </span>@code.Age</p>
-                    <p class="contact-phone"><span class="contact-label">Phone: </span>@code.Phone</p>            
-                    <p class="contact-email"><span class="contact-label">Email: </span>@code.Email</p>
-                    <p class="contact-experience"><span class="contact-label">Experience: </span>@code.Experience</p>
-                    <p class="contact-nation"><span class="contact-label">Nationality: </span>@code.Nationality</p>
-                </div>
+        <form action="" method="POST" class="search-form clear-fix">
+            <div class="form-group search-bar">
+                <label class="control-label" for="search">Manager Name</label>
+                <input type="text" class="form-control" name="search" id="search" />
             </div>
+            <div class="form-group search-btn">
+                <input type="submit" value="Search Manager" class="btn btn-default" />
+            </div>
+        </form>
+        @if(!Model.SearchCompleted){
+            Model.SearchResults = Model.Managers;
         }
-    }
-    else{
-        <div>No result for the search item.</div>   
-    }
+        <div class="contact-cards">
+        @if(Model.SearchResults.Count > 0){
+            @foreach(var code in Model.SearchResults) {
+                <div class="contact-card">
+                    <img src="images/managers/allenklein.jpg" class="contact-image">
+                    <div class="contact-info">  
+                        <p class="contact-name">@code.ManagerName</p>                      
+                        <p class="contact-age"><span class="contact-label">Age: </span>@code.Age</p>
+                        <p class="contact-phone"><span class="contact-label">Phone: </span>@code.Phone</p>            
+                        <p class="contact-email"><span class="contact-label">Email: </span>@code.Email</p>
+                        <p class="contact-experience"><span class="contact-label">Experience: </span>@code.Experience</p>
+                        <p class="contact-nation"><span class="contact-label">Nationality: </span>@code.Nationality</p>
+                    </div>
+                </div>
+            }
+        }
+        else{
+            <div>No result for the search item.</div>   
+        }
+        </div>
     </div>
 </div>

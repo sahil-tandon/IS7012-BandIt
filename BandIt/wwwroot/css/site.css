@@ -198,8 +198,9 @@ footer p {
 }
 
 /* Band Listing Page */
-.band-tile-wrap {
-    overflow: hidden;
+.band-listing,
+.band-listing ~ footer {
+    background: linear-gradient(to right, #085078, #85d8ce);
 }
 .band-tile {
     width: calc((100% - 120px)/3);
@@ -208,11 +209,11 @@ footer p {
     border: 1px solid black;
     background: #000;
     border-radius: 12px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    box-shadow: 3px 3px 10px 2px rgba(0,0,0,0.4);
+    transition: box-shadow 0.3s ease-in-out;
 }
 .band-tile:hover {
-    background: #101010;
+    box-shadow: 6px 6px 12px 2px rgba(0,0,0,0.5);
 }
 .band-tile:nth-of-type(3n) {
     margin-right: 0;
@@ -243,6 +244,10 @@ footer p {
 }
 
 /* Manager Listing */
+.manager-listing,
+.manager-listing ~ footer {
+    background: linear-gradient(to right, rgb(218, 210, 153), rgb(176, 218, 185));
+}
 .contact-card {
     width: calc(50% - 20px);
     border: 1px solid black;

@@ -4,41 +4,43 @@
     ViewData["Title"] = "Band Listing";
 }
 
-<div class="container">
-    <h1 class="custom-head">OUR BAND LINEUP</h1>
+<div class="band-listing">
+    <div class="container">
+        <h1 class="custom-head">OUR BAND LINEUP</h1>
 
-    <form action="" method="POST" class="search-form clear-fix">
-        <div class="form-group search-bar">
-            <label class="control-label" for="search">Band Name</label>
-            <input type="text" class="form-control" name="search" id="search" />
-        </div>
-        <div class="form-group search-btn">
-            <input type="submit" value="Search Band" class="btn btn-default" />
-        </div>
-    </form>
-    @if(!Model.SearchCompleted){
-        Model.SearchResults = Model.Bands;
-    }
-    <div class="band-tile-wrap">
-    @if(Model.SearchResults.Count > 0){
-        @foreach(var code in Model.SearchResults) {
-            <div class="band-tile">
-                <img src="images/bands/metallica.jpg" class="band-image">
-                <div class="band-info">  
-                    <p class="band-name"><span class="band-label">Name: </span>@code.BandName</p>                      
-                    <p class="band-genre"><span class="band-label">Genre: </span>@code.Genre</p>
-                    <p class="band-origin"><span class="band-label">Origin: </span>@code.Origin</p>            
-                    <p class="band-founded"><span class="band-label">Founded: </span>@code.DateFounded</p>
-                    <p class="band-manager"><span class="band-label">Manager: </span>@code.BandManager.ManagerName</p>
-                    <p class="band-members"><span class="band-label">Members: </span>@code.Members</p>
-                    <p class="band-site"><span class="band-label">Website: </span><a href="http://www.@code.Website" target="_blank">@code.Website</a></p>
-                    <p class="band-songs"><span class="band-label"><a href = "/SongListing?id=@code.Id">Click here for Song Listing</a></span></p>
-                </div>
+        <form action="" method="POST" class="search-form clear-fix">
+            <div class="form-group search-bar">
+                <label class="control-label" for="search">Band Name</label>
+                <input type="text" class="form-control" name="search" id="search" />
             </div>
+            <div class="form-group search-btn">
+                <input type="submit" value="Search Band" class="btn btn-default" />
+            </div>
+        </form>
+        @if(!Model.SearchCompleted){
+            Model.SearchResults = Model.Bands;
         }
-    }
-    else{
-        <div>No result for the search item.</div>   
-    }
+        <div class="band-tile-wrap clear-fix">
+        @if(Model.SearchResults.Count > 0){
+            @foreach(var code in Model.SearchResults) {
+                <div class="band-tile">
+                    <img src="images/bands/metallica.jpg" class="band-image">
+                    <div class="band-info">  
+                        <p class="band-name"><span class="band-label">Name: </span>@code.BandName</p>                      
+                        <p class="band-genre"><span class="band-label">Genre: </span>@code.Genre</p>
+                        <p class="band-origin"><span class="band-label">Origin: </span>@code.Origin</p>            
+                        <p class="band-founded"><span class="band-label">Founded: </span>@code.DateFounded</p>
+                        <p class="band-manager"><span class="band-label">Manager: </span>@code.BandManager.ManagerName</p>
+                        <p class="band-members"><span class="band-label">Members: </span>@code.Members</p>
+                        <p class="band-site"><span class="band-label">Website: </span><a href="http://www.@code.Website" target="_blank">@code.Website</a></p>
+                        <p class="band-songs"><span class="band-label"><a href = "/SongListing?id=@code.Id">Click here for Song Listing</a></span></p>
+                    </div>
+                </div>
+            }
+        }
+        else{
+            <div>No result for the search item.</div>   
+        }
+        </div>
     </div>
 </div>
