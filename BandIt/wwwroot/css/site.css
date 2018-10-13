@@ -479,3 +479,52 @@ footer p {
 #update-form .btn {
     margin-top: 15px;
 }
+
+/* Contact Us */
+.contact-us-tile {
+    width: 20%;
+    float: left;
+    margin: 50px 15% 0 15%;
+    border: 1px solid;
+    background: #fafafa;
+    box-shadow: 3px 3px 10px 2px rgba(0,0,0,0.4);
+    transiton: box-shadow 0.3s ease-in-out;
+}
+.contact-us-tile:hover {
+    box-shadow: 6px 6px 12px 2px rgba(0,0,0,0.5);
+}
+.contact-us-image {
+    width: 100%;
+    padding: 10px;
+}
+.contact-us-tile:last-of-type {
+    float: right;
+}
+.contact-us-info {
+    padding: 0 10px;
+}
+.contact-us-info p {
+    margin: 0;
+    padding: 5px 0;
+    line-height: 1;
+    font-size: 14px;
+}
+.contact-us-name {
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.contact-us-designation {
+    font-weight: bold;
+}
+.contact-us-location {
+    padding: 2px 0;
+}
+.contact-us-email {
+    padding: 0px 0 10px 0;
+    display: inline-block;
+}
+.contact-us-phone {
+    padding-bottom: 10px;
+    font-size: 12px;
+}

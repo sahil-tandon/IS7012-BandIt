@@ -4,27 +4,28 @@
     ViewData["Title"] = "Contact";
 }
 
-<div class="container">
-    <h2>@ViewData["Title"]</h2>
-    <h3>@Model.Message</h3>
+<div class="container">    
+    <h1 class="custom-head">GET IN TOUCH WITH US..</h1>
 
-    <img src = "/Images/bandit-original.png" align = "right">
+    <div class="contact-us-tile">
+        <img class="contact-us-image" src="images/managers/sahiltandon.jpg">
+        <div class="contact-us-info">
+            <p class="contact-us-name">Sahil Tandon</p>
+            <p class="contact-us-designation">Co-Founder</p>
+            <p class="contact-us-location">Cincinnati, OH</p>            
+            <p class="contact-us-phone">(513) 206-3185</p>
+            <a href="mailto:sahiltandon@bandit.com" class="contact-us-email">sahiltandon@bandit.com</a>
+        </div>
+    </div>
 
-    <address>
-        Sudhakar Samak<br />
-        Cincinnati, OH<br />
-        <abbr title="Phone">P:</abbr>
-        513.510.7397
-    </address>
-    <address>
-        Sahil Tandon<br />
-        Cincinnati, OH<br />
-        <abbr title="Phone">P:</abbr>
-        513.206.3185
-    </address>
-
-    <address>
-        <strong>Support:</strong> <a href="mailto:tandonsl@mail.uc.edu">tandonsl@mail.uc.edu</a><br />
-        <strong>Marketing:</strong> <a href="mailto:samaklsr@mail.uc.edu">samaklsr@mail.uc.edu</a>
-    </address>
+    <div class="contact-us-tile">
+        <img class="contact-us-image" src="images/managers/sudhakarsamak.jpg">
+        <div class="contact-us-info">
+            <p class="contact-us-name">Sudhakar Samak</p>
+            <p class="contact-us-designation">Co-Founder</p>
+            <p class="contact-us-location">Cincinnati, OH</p>
+            <p class="contact-us-phone">(513) 510-7397</p>
+            <a href="mailto:sudhakarsamak@bandit.com" class="contact-us-email">sudhakarsamak@bandit.com</a>            
+        </div>
+    </div>
 </div>
