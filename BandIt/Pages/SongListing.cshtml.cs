@@ -62,6 +62,16 @@ namespace BandIt.Pages
             if(SortValue == "Release Date"){
                 SortResults =  _context.Song.OrderBy(x => x.ReleaseDate).Where(x => x.Artist.Id == id).Include(x => x.Artist).ToList();
                 SearchCompleted = true;
+            }
+            if(SortValue == "Artist"){
+                if(id != null){
+                    SortResults =  _context.Song.OrderBy(x => x.Artist.BandName).Where(x => x.Artist.Id == id).Include(x => x.Artist).ToList();
+                    SearchCompleted = true;
+                }
+                else{
+                    SortResults =  _context.Song.OrderBy(x => x.Artist.BandName).Include(x => x.Artist).ToList();
+                    SearchCompleted = true;
+                }
             }    
         }
     }
