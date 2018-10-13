@@ -420,7 +420,7 @@ footer p {
 }
 .search-form label {
     font-size: 14px;
-    color: #fff;
+    color: #000;
 }
 .search-bar {
     width: calc(100% - 145px);
