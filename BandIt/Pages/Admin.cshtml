@@ -12,23 +12,24 @@
         <li><a asp-page="Concerts/Index">Administer Concerts</a></li>
         <li><a asp-page="Songs/Index">Administer Songs</a></li>
     </ul>
+
+    <p>CHANGE MANAGER?</p>
+    <form action="" method="POST" style="margin-top: 50px;" id="update-form">
+        <label class="control-label" >Select Band</label>
+        <select name="BandUpdate" form="update-form" class = "form-control">
+        @foreach ( var code in Model.Bands){
+            <option value="@code.BandName">@code.BandName</option>
+        }
+        </select>
+        <label class="control-label" >Select New Manager Name</label>
+        <select name="ManagerUpdate" form="update-form" class = "form-control">
+        @foreach ( var code in Model.Managers){
+            <option value="@code.ManagerName">@code.ManagerName</option>
+        }
+        </select>
+        <input type = "submit" value="Update" class="btn btn-default">
+    </form>
+    @if(Model.SearchCompleted == true){
+        <p>UPDATED!</p>
+    }
 </div>
-<p>CHANGE MANAGER?</p>
-<form action="" method="POST" style="margin-top: 50px;" id="update-form">
-    <label class="control-label" >Select Band</label>
-    <select name="BandUpdate" form="update-form" class = "form-control">
-    @foreach ( var code in Model.Bands){
-        <option value="@code.BandName">@code.BandName</option>
-    }
-    </select>
-    <label class="control-label" >Select New Manager Name</label>
-    <select name="ManagerUpdate" form="update-form" class = "form-control">
-    @foreach ( var code in Model.Managers){
-        <option value="@code.ManagerName">@code.ManagerName</option>
-    }
-    </select>
-    <input type = "submit" value="Update" class="btn btn-default">
-</form>
-@if(Model.SearchCompleted == true){
-    <p>UPDATED!</p>
-}

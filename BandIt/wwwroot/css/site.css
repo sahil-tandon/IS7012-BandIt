@@ -1,8 +1,9 @@
 /* Global */
 body {
     padding-top: 90px;
-    background: #fafafa;
+    background: 
     transition: padding-top 0.4s ease-in-out;
+    background: linear-gradient(to right, #8e9eab, #eef2f3);    
 }
 body.collapsed {
     padding-top: 50px;
@@ -23,7 +24,6 @@ body.collapsed {
     text-align: center;
     margin-top: 40px;
     letter-spacing: 0.05em;
-    color: #fff;
 }
 footer {
     padding: 50px 0 ;
@@ -199,10 +199,6 @@ footer p {
 }
 
 /* Band Listing Page */
-.band-listing,
-.band-listing ~ footer {
-    background: linear-gradient(to right, rgb(40, 48, 72), rgb(133, 147, 152));
-}
 .band-tile {
     width: calc((100% - 120px)/3);
     float: left;
@@ -245,10 +241,6 @@ footer p {
 }
 
 /* Manager Listing */
-.manager-listing,
-.manager-listing ~ footer {
-    background: linear-gradient(to right, rgb(40, 48, 72), rgb(133, 147, 152));
-}
 .contact-card {
     width: calc(50% - 20px);
     border: 1px solid black;
@@ -289,10 +281,6 @@ footer p {
 }
 
 /* Concert Listing */
-.concert-listing,
-.concert-listing ~ footer {
-    background: linear-gradient(to right, rgb(40, 48, 72), rgb(133, 147, 152));
-}
 .concert-ticket {
     filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
     margin-bottom: 40px;
@@ -401,10 +389,6 @@ footer p {
 }
 
 /* Song Listing */
-.song-listing,
-.song-listing ~ footer {
-    background: linear-gradient(to right, rgb(40, 48, 72), rgb(133, 147, 152));
-}
 .song-listing table {
     color: white;
 }
