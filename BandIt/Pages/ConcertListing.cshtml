@@ -14,18 +14,18 @@
                 <input type="submit" value="Search Concert" class="btn btn-default" />
             </div>
         </form>
-        @if(Model.SearchCompleted == true){
+        @if(Model.SearchCompleted == true){            
             @if(Model.SearchResults.Count == 0){
                 <p>There are no concerts by this band.</p>
             }
-            @foreach(var code in Model.SearchResults) {
+            @foreach(var code in Model.SearchResults) {                
                 <div class="concert-ticket clear-fix">
                     <div class="ticket-head">
                         <p class="ticket-concert">@code.ConcertName</p>
                         <p class="ticket-band">@code.PerformingBand.BandName</p>                    
                     </div>
                     <div class="ticket-art">
-                        <img src="images/concerts/concert-1.jpg">
+                        <img src="images/concerts/concert-"+@code.Id+".jpg">
                     </div>
                     <div class="ticket-footer">
                         <div class="ticket-footer-details clear-fix">
@@ -49,7 +49,7 @@
                         <p class="ticket-band">@code.PerformingBand.BandName</p>                    
                     </div>
                     <div class="ticket-art">
-                        <img src="images/concerts/concert-1.jpg">
+                        <img src="images/concerts/concert-@code.Id a.jpg">
                     </div>
                     <div class="ticket-footer">
                         <div class="ticket-footer-details clear-fix">
