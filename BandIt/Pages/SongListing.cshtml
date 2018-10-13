@@ -4,45 +4,51 @@
     ViewData["Title"] = "Song Listing";
 }
 
-<div class="container">
-    <h1>
-        SONG LISTING
-    </h1>
-    <form action="" method="POST" style="margin-top: 50px;" id="sort-form">
-        <select name="SortValue" form="sort-form" class = "form-control">
-        <option value="Default">Sort by</option>
-        <option value="Title">Title</option>
-        <option value="Artist">Artist Name</option>
-        <option value="Duration">Duration</option>
-        <option value="Rating">Rating</option>
-        <option value="Release Date">Release Date</option>
-        </select>
-        <input type = "submit" value="Sort" class="btn btn-default">
-    </form>
-    @if(!Model.SearchCompleted){
-            Model.SortResults = Model.Songs;
-    }
-    <table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Duration</th>
-            <th>Rating</th>
-            <th>Release Date</th>
-            <th>Artist Name</th>
-        </tr>
-    </thead>
-    <tbody>
-
-    @foreach(var code in Model.SortResults) {
-        <tr>
-            <td><a target = "_blank" href = "https://www.youtube.com/results?search_query=@code.Title @code.Artist.BandName">@code.Title</a></td>
-            <td>@code.Duration</td>
-            <td>@code.Rating</td>
-            <td>@Html.DisplayFor(modelItem => @code.ReleaseDate)</td>
-            <td>@code.Artist.BandName</td>
-        </tr>
+<div class="song-listing">
+    <div class="container">
+        <h1 class="custom-head">
+            SONG LISTING
+        </h1>
+        <form action="" method="POST" style="margin-top: 50px;" id="sort-form" class="search-form clear-fix">
+            <div class="form-group search-bar">
+                <select name="SortValue" form="sort-form" class = "form-control">
+                    <option value="Default">Sort by</option>
+                    <option value="Title">Title</option>
+                    <option value="Artist">Artist Name</option>
+                    <option value="Duration">Duration</option>
+                    <option value="Rating">Rating</option>
+                    <option value="Release Date">Release Date</option>
+                </select>
+            </div>        
+            <div class="form-group search-btn">
+                <input type = "submit" value="Sort" class="btn btn-default">
+            </div>
+        </form>
+        @if(!Model.SearchCompleted){
+                Model.SortResults = Model.Songs;
         }
-    </tbody>
-    </table>
+        <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Duration</th>
+                <th>Rating</th>
+                <th>Release Date</th>
+                <th>Artist Name</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        @foreach(var code in Model.SortResults) {
+            <tr>
+                <td><a target = "_blank" href = "https://www.youtube.com/results?search_query=@code.Title @code.Artist.BandName">@code.Title</a></td>
+                <td>@code.Duration</td>
+                <td>@code.Rating</td>
+                <td>@Html.DisplayFor(modelItem => @code.ReleaseDate)</td>
+                <td>@code.Artist.BandName</td>
+            </tr>
+            }
+        </tbody>
+        </table>
+    </div>
 </div>

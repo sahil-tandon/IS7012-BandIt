@@ -23,6 +23,7 @@ body.collapsed {
     text-align: center;
     margin-top: 40px;
     letter-spacing: 0.05em;
+    color: #fff;
 }
 footer {
     padding: 50px 0 ;
@@ -200,7 +201,7 @@ footer p {
 /* Band Listing Page */
 .band-listing,
 .band-listing ~ footer {
-    background: linear-gradient(to right, #085078, #85d8ce);
+    background: linear-gradient(to right, rgb(40, 48, 72), rgb(133, 147, 152));
 }
 .band-tile {
     width: calc((100% - 120px)/3);
@@ -246,7 +247,7 @@ footer p {
 /* Manager Listing */
 .manager-listing,
 .manager-listing ~ footer {
-    background: linear-gradient(to right, rgb(218, 210, 153), rgb(176, 218, 185));
+    background: linear-gradient(to right, rgb(40, 48, 72), rgb(133, 147, 152));
 }
 .contact-card {
     width: calc(50% - 20px);
@@ -290,7 +291,7 @@ footer p {
 /* Concert Listing */
 .concert-listing,
 .concert-listing ~ footer {
-    background: linear-gradient(to right, #556270, #ff6b6b);
+    background: linear-gradient(to right, rgb(40, 48, 72), rgb(133, 147, 152));
 }
 .concert-ticket {
     filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
@@ -399,10 +400,40 @@ footer p {
     transform: translateY(-50%);
 }
 
+/* Song Listing */
+.song-listing,
+.song-listing ~ footer {
+    background: linear-gradient(to right, rgb(40, 48, 72), rgb(133, 147, 152));
+}
+.song-listing table {
+    color: white;
+}
+.song-listing table tbody tr:hover,
+.song-listing table tbody tr:hover a {
+    color: black;
+}
+.song-listing table thead tr {
+    font-size: 15px;
+}
+.song-listing a {
+    color: #fff;
+    text-decoration: underline;
+}
+.song-listing a:hover,
+.song-listing a:focus {
+    color: #000;
+}
 
 /* Search */
 .search-form {
-    margin-top: 40px;
+    margin-top: 40px!important;    
+}
+.song-listing .search-form {
+    margin-bottom: 20px;
+}
+.search-form label {
+    font-size: 14px;
+    color: #fff;
 }
 .search-bar {
     width: calc(100% - 145px);
@@ -411,8 +442,11 @@ footer p {
 .search-btn {
     width: 125px;
     float: right;
-    margin: 22px 0;
+    margin: 24px 0;
     text-align: right;
+}
+.song-listing .search-btn {
+    margin: 0;
 }
 .search-btn .btn {
     width: 125px;
