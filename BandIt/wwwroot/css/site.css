@@ -242,6 +242,46 @@ body.collapsed {
     font-weight: bold;
 }
 
+/* Contact Listing */
+.contact-card {
+    width: calc(50% - 20px);
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    background: #000;
+    box-shadow: 3px 3px 10px 2px rgba(0,0,0,0.4);
+    transition: box-shadow 0.2s ease-in-out;
+}
+.contact-card:hover {
+    box-shadow: 6px 6px 12px 2px rgba(0,0,0,0.5);
+}
+.contact-card:nth-of-type(2n+1) {
+    float: left;    
+}
+.contact-card:nth-of-type(2n+2) {
+    float: right;    
+}
+.contact-image {
+    width: 40%;
+    float: left;
+}
+.contact-info {
+    width: 60%;
+    float: right;
+    padding: 18.5px 25px;
+    font-size: 14px;
+    color: #f22613;
+}
+.contact-info .contact-label {
+    color: #1499D7;
+}
+.contact-name {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.10em;
+}
+
 /* Search */
 .search-form {
     margin-top: 50px;

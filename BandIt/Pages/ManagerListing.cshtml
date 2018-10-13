@@ -18,18 +18,18 @@
     @if(!Model.SearchCompleted){
         Model.SearchResults = Model.Managers;
     }
-    <div class="band-tile-wrap">
+    <div class="contact-cards">
     @if(Model.SearchResults.Count > 0){
         @foreach(var code in Model.SearchResults) {
-            <div class="band-tile">
-                <img src="images/managers/allenklein.jpg" class="band-image">
-                <div class="band-info">  
-                    <p class="band-name"><span class="band-label">Name: </span>@code.ManagerName</p>                      
-                    <p class="band-genre"><span class="band-label">Age: </span>@code.Age</p>
-                    <p class="band-origin"><span class="band-label">Phone: </span>@code.Phone</p>            
-                    <p class="band-founded"><span class="band-label">Email: </span>@code.Email</p>
-                    <p class="band-manager"><span class="band-label">Experience: </span>@code.Experience</p>
-                    <p class="band-members"><span class="band-label">Nationality: </span>@code.Nationality</p>
+            <div class="contact-card">
+                <img src="images/managers/allenklein.jpg" class="contact-image">
+                <div class="contact-info">  
+                    <p class="contact-name">@code.ManagerName</p>                      
+                    <p class="contact-age"><span class="contact-label">Age: </span>@code.Age</p>
+                    <p class="contact-phone"><span class="contact-label">Phone: </span>@code.Phone</p>            
+                    <p class="contact-email"><span class="contact-label">Email: </span>@code.Email</p>
+                    <p class="contact-experience"><span class="contact-label">Experience: </span>@code.Experience</p>
+                    <p class="contact-nation"><span class="contact-label">Nationality: </span>@code.Nationality</p>
                 </div>
             </div>
         }
