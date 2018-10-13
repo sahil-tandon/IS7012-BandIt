@@ -153,6 +153,7 @@ footer p {
     font-size: 18px;
     text-transform: uppercase;
     display: inline-block;
+    font-weight: bold;
 }
 .see-all a {
     display: inline-block;    
@@ -161,13 +162,16 @@ footer p {
     transition: background 0.4s ease-in-out;
     width: 203px;
     height: 203px;
-    color: white;
+    color: white;    
+    font-weight: bold;
     font-size: 18px;
     text-transform: uppercase;
     line-height: 203px;
     margin: 15px;
+    letter-spacing: 0.10em;
 }
-.see-all a:hover {    
+.see-all a:hover,
+.see-all a:focus {    
     background: #f22613;
     text-decoration: none;
 }
@@ -261,8 +265,7 @@ footer p {
     margin: 5px 0 0px 0;
 }
 .band-songs a:hover,
-.band-songs a:focus,
-.band-songs a:visited {
+.band-songs a:focus {
     color: #ccc;
     text-decoration: none;
 }
@@ -440,8 +443,7 @@ footer p {
     text-decoration: underline;
 }
 .song-listing a:hover,
-.song-listing a:focus,
-.song-listing a:visited {
+.song-listing a:focus {
     color: #000;
 }
 
@@ -487,8 +489,7 @@ footer p {
     text-decoration: underline;
 }
 .admin-items a:hover,
-.admin-items a:focus,
-.admin-items a:visited {
+.admin-items a:focus {
     color: #000;
 }
 .update-manager {
