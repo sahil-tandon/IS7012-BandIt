@@ -29,7 +29,8 @@ namespace BandIt.Pages
         public void OnPost() {
             // PERFORM SEARCH
             if (string.IsNullOrWhiteSpace(ConcertSearch)) {
-                return ;
+                SearchResults = _context.Concert.OrderBy(x => x.Date).Include(x => x.PerformingBand).ToList();
+                SearchCompleted = true;
             }
             else{
                 SearchResults = _context.Concert
