@@ -5,15 +5,15 @@
 }
 
 <div class="container">
-    <h1>Admin Page</h1>
-    <ul>
+    <h1 class="custom-head">ADMIN SECTION</h1>
+    <ul class="admin-items">
         <li><a asp-page="Managers/Index">Administer Managers</a></li>
         <li><a asp-page="Bands/Index">Administer Bands</a></li>
         <li><a asp-page="Concerts/Index">Administer Concerts</a></li>
         <li><a asp-page="Songs/Index">Administer Songs</a></li>
     </ul>
-
-    <p>CHANGE MANAGER?</p>
+    <hr>
+    <p class="update-manager">UPDATE BAND MANAGER</p>
     <form action="" method="POST" style="margin-top: 50px;" id="update-form">
         <label class="control-label" >Select Band</label>
         <select name="BandUpdate" form="update-form" class = "form-control">
