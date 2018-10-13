@@ -22,7 +22,7 @@
                 <div class="band-info">  
                     <p class="band-name"><span class="band-label">Name: </span>@code.ConcertName</p>                      
                     <p class="band-genre"><span class="band-label">Venue: </span>@code.Venue</p>
-                    <p class="band-origin"><span class="band-label">Date: </span>@code.Date</p>            
+                    <p class="band-origin"><span class="band-label">Date: </span>@Html.DisplayFor(modelItem => @code.Date)</p>            
                     <p class="band-founded"><span class="band-label">Ticket Price: </span>@code.TicketPrice</p>
                     <p class="band-manager"><span class="band-label">Performing Artist: </span>@code.PerformingBand.BandName</p>        
                 </div>

@@ -38,7 +38,7 @@
             <td><a target = "_blank" href = "https://www.youtube.com/results?search_query=@code.Title">@code.Title</a></td>
             <td>@code.Duration</td>
             <td>@code.Rating</td>
-            <td>@code.ReleaseDate</td>
+            <td>@Html.DisplayFor(modelItem => @code.ReleaseDate)</td>
             <td>@code.Artist.BandName</td>
         </tr>
         }
