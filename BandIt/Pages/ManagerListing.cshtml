@@ -24,7 +24,7 @@
         @if(Model.SearchResults.Count > 0){
             @foreach(var code in Model.SearchResults) {
                 <div class="contact-card">
-                    <img src="images/managers/allenklein.jpg" class="contact-image">
+                    <img src="@code.Image" class="contact-image">
                     <div class="contact-info">  
                         <p class="contact-name">@code.ManagerName</p>                      
                         <p class="contact-age"><span class="contact-label">Age: </span>@code.Age</p>
